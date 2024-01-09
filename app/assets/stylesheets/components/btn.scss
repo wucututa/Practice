@@ -1,0 +1,36 @@
+.btn {
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    height: 48px;
+    letter-spacing: normal;
+    min-width: 200px;
+    text-align: center;
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+        transition: filter 250ms, color 200ms;
+    }
+
+    // Modifiers will go there
+    &--primary {
+        color: var(--color-white);
+        background-image: radial-gradient(circle at center, #FF385C 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
+    }
+    &--secondary {
+        border: 1px solid #b7b3b3;
+        color: #333;
+        background: var(--color-white);
+
+        .btn-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+
+
+    }
+}
