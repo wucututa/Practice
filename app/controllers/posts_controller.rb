@@ -6,14 +6,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    # will_paginate
-    @posts = Post.paginate(page: params[:page], per_page: 20)
-
-    # pagy
-    @pagy, @posts = pagy(Post.all, items: Pagy::DEFAULT[:items], page: params[:page] || 1)
-
-    # Kaminari
-    @posts = Post.page params[:page]
+    @pagy, @posts = pagy(Post.all)
   end
 
   # GET /posts/1 or /posts/1.json
