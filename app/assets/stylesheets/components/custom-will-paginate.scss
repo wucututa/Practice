@@ -1,0 +1,40 @@
+.pagination {
+    display: flex;
+    margin: 1rem 0;
+    margin-left: auto;
+    min-height: 24px;
+    justify-content: flex-end;
+
+    &-general {
+        border-radius: 4px;
+        box-sizing: content-box;
+        border: 1px solid #b8c8e2;
+        min-width: 24px;
+        min-height: 24px;
+        margin: 0 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #4ea6e0;
+        padding: 4px;
+    }
+
+
+    .previous_page,
+    .next_page,
+    .current,
+    a {
+        @extend .pagination-general;
+    }
+
+    .next_page {}
+
+    .current {
+        background: #4ea6e0;
+        color: #fff;
+    }
+
+    .disabled {
+        color: #666668;
+    }
+}

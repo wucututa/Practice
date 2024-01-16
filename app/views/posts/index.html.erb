@@ -1,11 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green">
+  <%= notice %>
+</p>
+<%= link_to "New post" , new_post_path %>
 
-<h1>Posts</h1>
+  <h1>Posts</h1>
 
-<div id="posts" class="grid grid-cols-3 gap-4 m-auto px-24">
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
-</div>
+  <div class="px-24">
 
-<%= link_to "New post", new_post_path %>
+    <div id="posts" class="grid grid-cols-3 gap-4 m-auto">
+      <% @posts.each do |post| %>
+        <%= render post %>
+          <% end %>
+    </div>
+
+    <%=  will_paginate %>
+    <%== pagy_nav(@pagy) %>
+    <%= paginate @posts %>
+  </div>
