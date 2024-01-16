@@ -13,6 +13,7 @@ gem "bootsnap", require: false
 group :development, :test do  
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
+  gem "byebug"
   gem "factory_bot_rails"
 end
 
@@ -39,3 +40,6 @@ gem 'sassc'
 gem "devise", "~> 4.9"
 gem "tailwindcss-rails"
 gem "paranoia"
+gem 'kaminari'
+gem 'will_paginate'
+gem 'pagy'
