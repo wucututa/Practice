@@ -1,12 +1,16 @@
 <div id="<%= dom_id post %>">
-  <p class="text-3xl font-bold underline text-red-600 mx-4">
-    <strong>Tilte:</strong>
+  <p>
+    <strong class="text-xl font-bold underline">Tilte:</strong>
     <%= post.tilte %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong class="text-green-600">Content:</strong>
     <%= post.content %>
+  </p>
+
+  <p>
+    <%= link_to "Show this post", post %>
   </p>
 
 </div>

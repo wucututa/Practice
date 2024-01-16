@@ -20,6 +20,8 @@ group :development do
   gem "figaro"
   gem "web-console"
   gem "rails_live_reload"
+  gem 'faker'
+  gem 'activerecord-import'
 end
 
 group :test do  
