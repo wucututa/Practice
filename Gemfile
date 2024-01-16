@@ -38,3 +38,4 @@ gem 'sassc'
 
 gem "devise", "~> 4.9"
 gem "tailwindcss-rails"
+gem "paranoia"

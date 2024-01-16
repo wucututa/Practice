@@ -1,4 +1,4 @@
-<div id="<%= dom_id post %>">
+<div id="<%= dom_id post %>" class="px-2">
   <p>
     <strong class="text-xl font-bold underline">Tilte:</strong>
     <%= post.tilte %>
@@ -9,8 +9,13 @@
     <%= post.content %>
   </p>
 
-  <p>
-    <%= link_to "Show this post", post %>
-  </p>
+  <div class="flex justify-between">
+    <div class="w-fit">
+      <button class="btn btn--secondary">
+        <%= link_to "Show this post" , post %>
+      </button>
+    </div>
+    <%= button_to "Destroy this post" , @post, method: :delete, class: "btn btn--primary" %>
+  </div>
 
 </div>
