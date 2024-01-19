@@ -43,3 +43,4 @@ gem "paranoia"
 gem 'kaminari'
 gem 'will_paginate'
 gem 'pagy'
+gem 'ransack'

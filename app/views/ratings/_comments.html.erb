@@ -1,0 +1,14 @@
+
+
+<div id="ratings">
+    <% @rate.each do |rate| %>
+      <div id="<%= dom_id rate %>" class="px-2 flex justify-between">
+        <div>   
+          <p>
+            <strong class="text-green-600"><%= rate.account.username %>:</strong>
+            <%= rate.comment %>
+          </p>
+        </div>      
+      </div>
+    <% end %>
+</div>

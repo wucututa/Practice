@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_16_040108) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_17_101326) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_16_040108) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "tilte"
+    t.string "title"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,6 +83,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_16_040108) do
     t.index ["deleted_at"], name: "index_posts_on_deleted_at"
   end
 
+  create_table "rates", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "post_id"
+    t.string "comment", null: false
+    t.float "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_rates_on_account_id"
+    t.index ["post_id"], name: "index_rates_on_post_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "rates", "accounts"
+  add_foreign_key "rates", "posts"
 end

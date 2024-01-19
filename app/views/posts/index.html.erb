@@ -7,10 +7,31 @@
 
   <div class="px-24">
 
-    <div id="posts" class="grid grid-cols-3 gap-4 m-auto">
+    <%= render "search" %>
+
+    <div id="posts">
       <% @posts.each do |post| %>
-        <%= render post %>
-          <% end %>
+        <div id="<%= dom_id post %>" class="px-2 flex justify-between">
+          <div>
+            <p>
+              <strong class="text-xl font-bold underline">Tilte:</strong>
+              <%= post.title %>
+            </p>
+        
+            <p>
+              <strong class="text-green-600">Content:</strong>
+              <%= post.content %>
+            </p>
+          </div>
+          <div class="flex justify-between">
+            <button class="btn btn--secondary mr-2">
+              <%= link_to "Show this post" , post %>
+            </button>
+            <%= button_to "Destroy this post" , @post, method: :delete, class: "btn btn--primary" %>
+          </div>
+        
+        </div>
+      <% end %>
     </div>
     <%== pagy_nav(@pagy) %>
   </div>

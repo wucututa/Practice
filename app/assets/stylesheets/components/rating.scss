@@ -1,0 +1,22 @@
+.stars {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    svg {
+      width: 50px;
+    }
+  }
+  
+  .cover {
+    background: white;
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: color;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  svg {
+    fill: gold;
+  }

@@ -1,5 +1,12 @@
 <h1 id="dnm">Home#index</h1>
-<form id="myForm" data-controller="hello">
+<% if account_signed_in? %>
+  <span>Welcome <%= current_account.username %></span>
+<% end %>
+
+<div>
+  <%= link_to "Go to Posts", posts_path %>
+</div>
+    <!-- <form id="myForm" data-controller="hello">
   <label for="name">Name:</label>
   <input type="text" data-hello-target="name" id="name" />
   <span data-hello-error-name="name" class="error"></span><br />
@@ -13,8 +20,8 @@
   <span data-hello-error-password="password" class="error"></span><br />
 
   <input type="submit" value="Submit" />
-
-  <!-- <ul>
+</form> -->
+    <!-- <ul>
     <li>Go down!</li>
     <li>It doesn’t matter.</li>
     <li>Plucking flowers is prohibited.</li>
@@ -528,6 +535,3 @@
     <li>Beats me!</li>
     <li>Be&nbsp;careful&nbsp;driving.</li>
   </ul> -->
-
-
-</form>

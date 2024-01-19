@@ -1,0 +1,10 @@
+
+
+
+<%= search_form_for @q, url: posts_path do |f| %>
+
+  <%= f.label :title_or_content_body_cont, 'テキスト検索' %>
+  <%= f.search_field :title_or_content_cont %>
+
+  <%= f.submit %>
+<% end %>

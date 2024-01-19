@@ -1,16 +1,27 @@
 class PostsController < ApplicationController
   include Pagy::Backend
+  include RatesHelper
+
   before_action :set_post, only: %i[ show edit update destroy ]
 
 
 
   # GET /posts or /posts.json
   def index
-    @pagy, @posts = pagy(Post.all)
+    @q = Post.ransack(params[:q])
+    if params[:q]
+      rich_text_content = Post.joins(:rich_text_content)
+      .where("action_text_rich_texts.body LIKE :search OR title LIKE :search", search: "%#{params[:q][:title_or_content_cont]}%")
+      @pagy, @posts = pagy rich_text_content
+    else
+      @pagy, @posts = pagy (@q.result)
+    end
+
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @rate = Rate.where(post_id: params[:id])
   end
 
   # GET /posts/new

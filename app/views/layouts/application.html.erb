@@ -13,7 +13,11 @@
   </head>
 
   <body>
-    <%= render "shared/modal_registrations" %>
-    <%= yield %>
+    <div class="flex justify-center items-start h-screen">
+      <div class="container bg-gray-50 p-4 h-full">
+        <%= render "shared/modal_registrations" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
